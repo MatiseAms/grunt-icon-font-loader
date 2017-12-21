@@ -1,0 +1,28 @@
+<% for (var i = 0; i < fonts.length; i++) { %>
+@import
+"icons/<%= fonts[i].name %>";
+
+$<%= fonts[i].name %>-font-name: "<%= fonts[i].name %>";
+$<%= fonts[i].name %>-font-file-name: "<%= fonts[i].name %>";
+$<%= fonts[i].name %>-font-family: #{$<%= fonts[i].name %>-font-name},sans-serif;
+%<%= fonts[i].name %>-font-family{ font-family: $<%= fonts[i].name %>-font-family; }
+<% if (fonts[i].weights.length > 0) { %>
+$<%= fonts[i].name %>-font-weights: (
+<% for (var x = 0; x < fonts[i].weights.length; x++) { %>	"<%= fonts[i].weights[x] %>" : <%= fonts[i].weights[x] %><% if((x + 1) < fonts[i].weights.length) { %>,<% } %>
+<% } %>);
+<% for (var y = 0; y < fonts[i].weights.length; y++) { %>
+$<%= fonts[i].name %>-font-weight-<%= fonts[i].weights[y] %>: <%= fonts[i].weights[y] %>;<% } %>
+
+@include font-list($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name}-,$<%= fonts[i].name %>-font-weights,normal);
+<% } else { %>
+@include font-include($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name},normal,normal);
+<% } %>
+<% } %>
+// Collect all fonts
+$icons-merged: map-collect(
+<% for (var g = 0; g < fonts.length; g++) { %>	$<%= fonts[g].name %>,
+<% } %>);
+
+$icons: (
+<% for (var h = 0; h < fonts.length; h++) { %>	<%= fonts[h].name %>: $<%= fonts[h].name %>,
+<% } %>);
