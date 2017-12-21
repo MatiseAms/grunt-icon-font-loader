@@ -6,6 +6,8 @@
  * Licensed under the MIT license.
  */
 
+let path = require('path');
+
 'use strict';
 
 module.exports = function(grunt) {
@@ -18,7 +20,7 @@ module.exports = function(grunt) {
 		var options = this.options({
 			scss: true,
 			less: true,
-			template: 'templates/tmpl.scss'
+			template: path.join(__dirname, 'templates/tmpl.scss')
 		});
 
 		// Iterate over all specified file groups.

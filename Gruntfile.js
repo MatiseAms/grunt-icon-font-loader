@@ -31,9 +31,6 @@ module.exports = function(grunt) {
 		// Configuration to be run (and then tested).
 		icon_font_loader: {
 			default_options: {
-				options: {
-					template: 'test/tmpl.scss'
-				},
 				src: 'test/icons/*',
 				dest: 'tmp/_all.scss'
 			}
