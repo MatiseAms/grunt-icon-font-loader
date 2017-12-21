@@ -1,0 +1,7 @@
+<% for (var i = 0; i < fonts.length; i++) { %>
+<% if (fonts[i].weights.length > 0) { %>
+@include font-list($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name}-,$<%= fonts[i].name %>-font-weights,normal);
+<% } else { %>
+@include font-include($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name},normal,normal);
+<% } %>
+<% } %>

@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 		icon_font_loader: {
 			default_options: {
 				src: 'test/icons/*',
-				dest: 'tmp/_all.scss'
+				dest: 'tmp/'
 			}
 		},
 
