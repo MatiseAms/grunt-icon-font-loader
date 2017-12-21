@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		var options = this.options({
 			scss: true,
 			less: true,
-			template: ''
+			template: 'templates/tmpl.scss'
 		});
 
 		// Iterate over all specified file groups.
