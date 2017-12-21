@@ -12,10 +12,6 @@ $<%= fonts[i].name %>-font-weights: (
 <% } %>);
 <% for (var y = 0; y < fonts[i].weights.length; y++) { %>
 $<%= fonts[i].name %>-font-weight-<%= fonts[i].weights[y] %>: <%= fonts[i].weights[y] %>;<% } %>
-
-@include font-list($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name}-,$<%= fonts[i].name %>-font-weights,normal);
-<% } else { %>
-@include font-include($<%= fonts[i].name %>-font-name,#{$<%= fonts[i].name %>-font-file-name},normal,normal);
 <% } %>
 <% } %>
 // Collect all fonts

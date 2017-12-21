@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 
 				fonts.push({
 					'name': dataKeys[0],
-					'weights': JSON.parse(data).weights
+					'weights': JSON.parse(data)[dataKeys[0]].weights
 				});
 
 			});
