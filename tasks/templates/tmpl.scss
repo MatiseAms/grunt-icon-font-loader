@@ -17,9 +17,9 @@ $<%= fonts[i].name %>-font-weight-<%= fonts[i].weights[y] %>: <%= fonts[i].weigh
 <% } %>
 // Collect all fonts
 $icons-merged: map-collect(
-<% for (var g = 0; g < fonts.length; g++) { %>	$<%= fonts[g].name %>,
+<% for (var g = 0; g < fonts.length; g++) { %>	map-get($<%= fonts[g].name %>-iconset,'icons')<% if((g + 1) < fonts.length){ %>,<% } %>
 <% } %>); //
 //
 $icons: (
-<% for (var h = 0; h < fonts.length; h++) { %>	<%= fonts[h].name %>: $<%= fonts[h].name %>,
+<% for (var h = 0; h < fonts.length; h++) { %>	"<%= fonts[h].name %>": $<%= fonts[h].name %>-iconset<% if((h + 1) < fonts.length){ %>,<% } %>
 <% } %>); //
