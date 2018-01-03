@@ -1,7 +1,7 @@
 {
   "name": "grunt-icon-font-loader",
   "description": "The best Grunt plugin ever.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/MatiseAms/grunt-icon-font-loader",
   "author": {
     "name": "Stephan Hoogland",
